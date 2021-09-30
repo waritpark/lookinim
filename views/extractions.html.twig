@@ -1,0 +1,123 @@
+{% extends "base.html.twig" %}
+
+{% block menu %}
+    <div class="container-fluid position-fixed vh-100 w-300 border-end z-index-1">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="/images/lunettes-de-realite-virtuelle.png" class="img-logo-2 mr-4 p-2" alt="logo lookinim">
+                <h1 class="display-6"> Look<span class="purple">in</span>im</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <ul class="list-unstyled mt-4">
+                    <li class=" px-2 py-4">
+                        <a href="extractions.html"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Accueil</span>
+                            <span class="width-50"><img src="/images/home4.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <span class="width-200 height-1 border-b1"></span>
+                        <a href="liste.html"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Mes extractions</span>
+                            <span class="width-50"><img src="/images/download2.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <span class="width-200 border-b1"></span>
+                        <a href="compte.html"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Mon compte</span>
+                            <span class="width-50"><img src="/images/cog3.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <span class="width-200 border-b1"></span>
+                        <a href="index.html"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Déconnexion</span>
+                            <span class="width-50"><img src="/images/btn5.png" alt=""></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block contenu %}
+    <div class="ml-350 py-5 min-height-footer">
+        <div class="position-relative mb-5">
+            <h2 class="mb-4">Nouvelle extraction</h2>
+            <div class="trait-2"></div>
+        </div>
+        <form action="" method="post" class="width-fit-content">
+            <div class="row m-0">
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="name-extract" placeholder="Nom de l'extraction*">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="url" placeholder="Url du site*">
+                </div>
+                <div class="col-5">
+                    <select id="categorie" class="form-control form-select" name="categorie">
+                        <option selected>Catégorie*</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <select id="periodicite" class="form-control form-select" name="periodicite">
+                        <option selected>Périodicité*</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-12 py-5">
+                    <div class="form-check form-check-inline pe-5">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="multiple" checked>
+                        <label class="form-check-label" for="inlineRadio1">Multiple</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="simple">
+                        <label class="form-check-label" for="inlineRadio2">Simple</label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="master-container"
+                        placeholder="Container du container des infos*">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="container" placeholder="Container des infos*">
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
+                </div>
+                <div class="col-5">
+                    <select id="type" name="type" class="form-control form-select">
+                        <option selected>Type de la balise*</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
+                </div>
+                <div class="col-5">
+                    <select id="type" name="type" class="form-control form-select">
+                        <option selected>Type de la balise*</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button class="border-0 py-2 px-3 rounded"><img src="/images/trash2.png" alt=""></button>
+                    <button class="border-0 py-2 px-3 rounded"><img src="/images/croix.png" alt=""></button>
+                </div>
+                <div class="col-4 ps-5">
+                    <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">Scrapper cette page!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endblock %}

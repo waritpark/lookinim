@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block contenu %}
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="d-flex align-items-center my-4">
+                    <img src="/images/lunettes-de-realite-virtuelle.png" class="img-logo-2 mr-4 p-2" alt="logo lookinim">
+                    <h1 class="display-6"> Look<span class="purple">in</span>im</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-6 text-center py-5 px-5 border-end">
+                <div class="position-relative mb-5">
+                    <h2 class="mb-4">Inscription</h2>
+                    <div class="trait"></div>
+                </div>
+                <form action="" method="post">
+                    <input type="text" class="form-control mb-3" name="pseudo" placeholder="Pseudo">
+                    <input type="email" class="form-control mb-3" name="mail" placeholder="Email">
+                    <input type="password" class="form-control mb-3" name="mdp" placeholder="Mot de passe">
+                    <input type="password" class="form-control" name="mdpDeux" placeholder="Veuillez répéter votre mot de passe">
+                    <input type="hidden" name="formulaireUser" value="inscription">
+                    <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">S'inscrire</button>
+                </form>
+                <p><a href="/">Retour</a></p>
+            </div>
+            <div class="col-6 text-center py-5 px-5">
+                <div class="position-relative mb-5">
+                    <h2 class="mb-4">Connexion</h2>
+                    <div class="trait"></div>
+                </div>
+                <form action="" method="post">
+                    <input type="email" class="form-control mb-3" name="mail" placeholder="Email">
+                    <input type="password" class="form-control" name="mdp" placeholder="Mot de passe">
+                    <input type="hidden" name="formulaireUser" value="connexion">
+                    <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">Se connecter</button>
+                </form>
+                <p><a href="/">Mot de passe oublié</a></p>
+                <p><a href="/">Retour</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
