@@ -1,52 +1,5 @@
-{% extends "base.html.twig" %}
+{% extends "base_appli.html.twig" %}
 
-{% block menu %}
-    <div class="container-fluid position-fixed vh-100 w-300 border-end z-index-1">
-        <div class="row">
-            <div class="col-12 text-center">
-                <img src="/images/lunettes-de-realite-virtuelle.png" class="img-logo-2 mr-4 p-2" alt="logo lookinim">
-                <h1 class="display-6"> Look<span class="purple">in</span>im</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <ul class="list-unstyled mt-4">
-                    <li class=" px-2 py-4">
-                        <a href="extractions.html"
-                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
-                            <span class="width-200">Accueil</span>
-                            <span class="width-50"><img src="/images/home4.png" alt=""></span>
-                        </a>
-                    </li>
-                    <li class=" px-2 py-4">
-                        <span class="width-200 height-1 border-b1"></span>
-                        <a href="liste.html"
-                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
-                            <span class="width-200">Mes extractions</span>
-                            <span class="width-50"><img src="/images/download2.png" alt=""></span>
-                        </a>
-                    </li>
-                    <li class=" px-2 py-4">
-                        <span class="width-200 border-b1"></span>
-                        <a href="compte.html"
-                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
-                            <span class="width-200">Mon compte</span>
-                            <span class="width-50"><img src="/images/cog3.png" alt=""></span>
-                        </a>
-                    </li>
-                    <li class=" px-2 py-4">
-                        <span class="width-200 border-b1"></span>
-                        <a href="index.html"
-                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
-                            <span class="width-200">Déconnexion</span>
-                            <span class="width-50"><img src="/images/btn5.png" alt=""></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    {% endblock %}
     {% block contenu %}
     <div class="ml-350 py-5 min-height-footer">
         <div class="position-relative mb-5">

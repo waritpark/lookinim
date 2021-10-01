@@ -13,7 +13,7 @@
 /* color and bg */
 
 .bg-lg-grey {
-    background-color: #F5F5F5;
+    background-color: #dee2e6;
 }
 
 .purple, a {
@@ -167,9 +167,6 @@ animation: anim2 2s 500ms  normal ease-out forwards;
 }
 .ml-350 {
     margin-left: 350px;
-}
-.z-index-1 {
-    z-index: -1;
 }
 .width-fit-content {
     width: fit-content;

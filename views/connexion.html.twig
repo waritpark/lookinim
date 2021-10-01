@@ -11,6 +11,11 @@
             </div>
         </div>
     </header>
+    {% if message|length >0 %}
+        <div class="alert alert-{{message.type}} d-flex justify-content-center" role="alert">
+            {{message.contenu}}
+        </div>
+    {% endif %}
     <div class="container my-5">
         <div class="row align-items-center">
             <div class="col-6 text-center py-5 px-5 border-end">
@@ -18,11 +23,11 @@
                     <h2 class="mb-4">Inscription</h2>
                     <div class="trait"></div>
                 </div>
-                <form action="" method="post">
+                <form action="/inscription" method="post">
                     <input type="text" class="form-control mb-3" name="pseudo" placeholder="Pseudo">
                     <input type="email" class="form-control mb-3" name="mail" placeholder="Email">
                     <input type="password" class="form-control mb-3" name="mdp" placeholder="Mot de passe">
-                    <input type="password" class="form-control" name="mdpDeux" placeholder="Veuillez répéter votre mot de passe">
+                    <input type="password" class="form-control" name="mdp2" placeholder="Veuillez répéter votre mot de passe">
                     <input type="hidden" name="formulaireUser" value="inscription">
                     <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">S'inscrire</button>
                 </form>

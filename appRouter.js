@@ -4,18 +4,30 @@ const router = express.Router();
 // chercher le moteur de template
 const twig = require("twig");
 const userController = require('./controllers/user.controller');
-const adminController = require('./controllers/admin.controller');
 
-// requete get sur la route de base
+router.use((requete, reponse, suite) => {
+    let session = requete.session.authentification;
+    console.log(session);
+    if (typeof session !== "undefined" && (session.contenu == "user" || session.contenu== "admin")) {
+        suite();
+    }
+    else {
+        const error = new Error("Accès interdit");
+        error.status = 403;
+        reponse.end(error.message);
+    }
+});
+
 router.get("/", (requete, reponse) => {
-    reponse.render("accueil.html.twig");
+    reponse.render("extractions.html.twig");
 })
-router.get("/connexion", (requete, reponse) => {
-    reponse.render("connexion.html.twig");
+router.get("/compte", (requete, reponse) => {
+    reponse.render("compte.html.twig");
 })
-router.post("/connexion", userController.user_formulaire);
-router.post("/inscription", userController.user_formulaire_inscription);
-router.get("/deconnexion", userController.user_disconnect);
+router.get("/liste", (requete, reponse) => {
+    reponse.render("liste.html.twig");
+})
+
 
 // Gère l'erreur 404
 router.use((requete, reponse, suite) => {
@@ -29,6 +41,4 @@ router.use((error,requete,reponse,suite) => {
     reponse.end(error.message);
 });
 
-
-// exporter ce fichier
 module.exports = router;

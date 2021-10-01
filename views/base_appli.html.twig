@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookinim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- content -->
+    <!-- menu -->
+    <div class="container-fluid position-fixed vh-100 w-300 border-end">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="/images/lunettes-de-realite-virtuelle.png" class="img-logo-2 mr-4 p-2" alt="logo lookinim">
+                <h1 class="display-6"> Look<span class="purple">in</span>im</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <ul class="list-unstyled mt-4">
+                    <li class=" px-2 py-4">
+                        <a href="/appli/"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Accueil</span>
+                            <span class="width-50"><img src="/images/home4.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <a href="/appli/liste"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Mes extractions</span>
+                            <span class="width-50"><img src="/images/download2.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <a href="/appli/compte"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Mon compte</span>
+                            <span class="width-50"><img src="/images/cog3.png" alt=""></span>
+                        </a>
+                    </li>
+                    <li class=" px-2 py-4">
+                        <a href="/deconnexion"
+                            class="d-flex w-100 justify-content-between fs-4 text-decoration-none text-black">
+                            <span class="width-200">Déconnexion</span>
+                            <span class="width-50"><img src="/images/btn5.png" alt=""></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    {% block contenu %}
+    {% endblock %}
+    <!-- end content -->
+
+    <!-- footer -->
+    <footer class="container-fluid height-80 d-flex justify-content-center align-items-center  bg-lg-grey text-center display-8 py-3">
+        <p>lookinim@2021</p>
+    </footer>
+    <!--end footer -->
+
+    <!-- script -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- end script -->
+
+</body>
+</html>
