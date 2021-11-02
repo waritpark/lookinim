@@ -5,18 +5,18 @@ const router = express.Router();
 const twig = require("twig");
 const userController = require('./controllers/user.controller');
 
-router.use((requete, reponse, suite) => {
-    let session = requete.session.authentification;
-    console.log(session);
-    if (typeof session !== "undefined" && (session.contenu == "user" || session.contenu== "admin")) {
-        suite();
-    }
-    else {
-        const error = new Error("Accès interdit");
-        error.status = 403;
-        reponse.end(error.message);
-    }
-});
+// router.use((requete, reponse, suite) => {
+//     let session = requete.session.authentification;
+//     console.log(session);
+//     if (typeof session !== "undefined" && (session.contenu == "user" || session.contenu== "admin")) {
+//         suite();
+//     }
+//     else {
+//         const error = new Error("Accès interdit");
+//         error.status = 403;
+//         reponse.end(error.message);
+//     }
+// });
 
 router.get("/", (requete, reponse) => {
     reponse.render("extractions.html.twig");

@@ -9,10 +9,10 @@ const adminController = require('./controllers/admin.controller');
 // requete get sur la route de base
 router.get("/", (requete, reponse) => {
     reponse.render("accueil.html.twig");
-})
+});
 router.get("/connexion", (requete, reponse) => {
     reponse.render("connexion.html.twig");
-})
+});
 router.post("/connexion", userController.user_formulaire);
 router.post("/inscription", userController.user_formulaire_inscription);
 router.get("/deconnexion", userController.user_disconnect);

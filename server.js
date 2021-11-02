@@ -10,20 +10,29 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/lookinim",{useNewUrlParser:true,useUnifiedTopology:true})
-const session= require("express-session");
- 
-server.use(session({
-    secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true,
-    cookie: { maxAge: 600000 }
-}));
-server.use((requete, reponse, suite) => {
-    reponse.locals.authentification = requete.session.authentification;
-    reponse.locals.message = requete.session.message;
-    delete requete.session.message;
-    suite();
-});
+//const session= require("express-session");
+
+// const browserObject = require('./browser');
+// const scraperController = require('./controllers/scrapingController');
+
+// //Start the browser and create a browser instance
+// let browserInstance = browserObject.startBrowser();
+
+// // Pass the browser instance to the scraper controller
+// scraperController(browserInstance);
+
+// server.use(session({
+//     secret: 'keyboard cat',
+//     resave: true,
+//     saveUninitialized: true,
+//     cookie: { maxAge: 600000 }
+// }));
+// server.use((requete, reponse, suite) => {
+//     reponse.locals.authentification = requete.session.authentification;
+//     reponse.locals.message = requete.session.message;
+//     delete requete.session.message;
+//     suite();
+// });
 server.use(morgan('dev'));
 server.use(bodyParser.urlencoded({extended:false}));
 server.use(express.static("public"));

@@ -171,3 +171,16 @@ animation: anim2 2s 500ms  normal ease-out forwards;
 .width-fit-content {
     width: fit-content;
 }
+
+/* extraction bouton ajout scrap multiple */
+.img-add-scrap {
+    background-color: rgb(239,239,239);
+    padding: 8px;
+    border-radius: 5px;
+}
+.button-add-scrap {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none;
+}

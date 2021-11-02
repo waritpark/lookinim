@@ -27,50 +27,132 @@
                     </select>
                 </div>
                 <div class="col-12 py-5">
-                    <div class="form-check form-check-inline pe-5">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="multiple" checked>
-                        <label class="form-check-label" for="inlineRadio1">Multiple</label>
+                    <div class="row mb-5">
+                        <div class="col-5 d-flex justify-content-center">
+                            <div class="form-check form-check-inline pe-5">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1"
+                                    value="multiple" onclick="partieMultiple()" checked>
+                                <label class="form-check-label" for="inlineRadio1">Multiple</label>
+                            </div>
+                        </div>
+                        <div class="col-5 d-flex justify-content-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" onclick="partieSimple()" type="radio" name="inlineRadioOptions2" id="inlineRadio2"
+                                    value="simple">
+                                <label class="form-check-label" for="inlineRadio2">Simple</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="simple">
-                        <label class="form-check-label" for="inlineRadio2">Simple</label>
+                    <div class="row d-flex partie-multiple" id="champ1">
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="master-container"
+                                placeholder="Container du container des infos*">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="container" placeholder="Container des infos*">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
+                        </div>
+                        <div class="col-5">
+                            <select id="type" name="type" class="form-control form-select">
+                                <option selected>Type de la balise*</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
+                        </div>
+                        <div class="col-5">
+                            <select id="type" name="type" class="form-control form-select">
+                                <option selected>Type de la balise*</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <span class="position-relative">
+                                <img class="position-absolute top-0 left-0 img-add-scrap" src="/images/croix.png" alt="">
+                                <input type="button" class="position-absolute top-0 left-0 button-add-scrap" onclick="addInput('container-multiple')"></input>
+                           </span>
+                        </div>
+                        <span id="container-multiple"></span>
                     </div>
-                </div>
-                <div class="col-5">
-                    <input type="text" class="form-control mb-3" name="master-container"
-                        placeholder="Container du container des infos*">
-                </div>
-                <div class="col-5">
-                    <input type="text" class="form-control mb-3" name="container" placeholder="Container des infos*">
-                </div>
-                <div class="col-5">
-                    <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
-                </div>
-                <div class="col-5">
-                    <select id="type" name="type" class="form-control form-select">
-                        <option selected>Type de la balise*</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-5">
-                    <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
-                </div>
-                <div class="col-5">
-                    <select id="type" name="type" class="form-control form-select">
-                        <option selected>Type de la balise*</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-2">
-                    <button class="border-0 py-2 px-3 rounded"><img src="/images/trash2.png" alt=""></button>
-                    <button class="border-0 py-2 px-3 rounded"><img src="/images/croix.png" alt=""></button>
-                </div>
-                <div class="col-4 ps-5">
-                    <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">Scrapper cette page!</button>
+                    <div class="row d-none" id="partie-simple">
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="master-container"
+                            placeholder="Container du container des infos*">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="container" placeholder="Container des infos*">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">
+                        </div>
+                        <div class="col-5">
+                            <select id="type" name="type" class="form-control form-select">
+                                <option selected>Type de la balise*</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-4 ps-5">
+                        <button class="btn btn-primary btn-lg mt-5 mb-2 px-4">Scrapper cette page!</button>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
+    <script>
+        //cacher / afficher la partie simple ou multiple
+        function partieMultiple() {
+            document.getElementsByClassName("partie-multiple").classList.add("d-flex");
+            document.getElementsByClassName("partie-multiple").classList.remove("d-none");
+
+            document.getElementById("partie-simple").classList.add("d-none");
+            document.getElementById("partie-simple").classList.remove("d-flex");
+        }
+        function partieSimple() {
+            document.getElementById("partie-simple").classList.add("d-flex");
+            document.getElementById("partie-simple").classList.remove("d-none");
+
+            document.getElementsByClassName("partie-multiple").classList.add("d-none");
+            document.getElementsByClassName("partie-multiple").classList.remove("d-flex");
+        }
+
+        //Ajouter une ligne d'input avec le bouton ajout
+        var nlignes = 1;
+        function addInput(divName){
+            if(nlignes !== 1) {
+                document.getElementById('btnremove'+nlignes+'').classList.add('d-none');
+            }
+            nlignes += 1;
+            var newdiv = document.createElement('div');
+            newdiv.innerHTML = '<div class="row d-flex" id="champ'+nlignes+'">'+
+                                    '<div class="col-5">'+
+                                        '<input type="text" class="form-control mb-3" name="cible" placeholder="Cible des balises*">'+
+                                    '</div>'+
+                                    '<div class="col-5">'+
+                                        '<select id="type" name="type" class="form-control form-select">'+
+                                            '<option selected>Type de la balise*</option>'+
+                                            '<option>...</option>'+
+                                        '</select>'+
+                                    '</div>'+
+                                    '<div class="col-2" id="btnremove'+nlignes+'">'+
+                                        '<span class="position-relative">'+
+                                            '<img class="position-absolute top-0 left-0 img-add-scrap" src="/images/trash2.png" alt="">'+
+                                            '<input type="button" class="position-absolute top-0 left-0 button-add-scrap" onclick="suppscrap('+nlignes+')"></input>'+
+                                        '</span>'+
+                                    '</div>'+
+                                '</div>';
+            document.getElementById(divName).appendChild(newdiv);
+            console.log(document.getElementById('champ'+nlignes+''));
+        }
+        function suppscrap(e) {
+            document.getElementById('champ'+e+'').remove(e); 
+            document.getElementById('btnremove'+(e-1)+'').classList.add('d-block'); 
+            document.getElementById('btnremove'+(e-1)+'').classList.remove('d-none');
+            nlignes = e-1; 
+        }
+    </script>
+    
     {% endblock %}
